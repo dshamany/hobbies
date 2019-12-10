@@ -1,0 +1,7 @@
+
+<form>
+    <input type="text" name="name" placeholder="Enter a hobby" style="display: block; width: 200px; margin-bottom: 10px; border: 0px solid transparent; border-bottom: 1px solid #444;"/>
+    <textarea name="desc" placeholder="Description" style="display: block; padding: 7px; width: 200px; height: 150px; margin-bottom: 10px; border: 0px solid transparent; border-bottom: 1px solid #444;"></textarea>
+    <button type="submit" formaction="/<%= hobby._id %>?_method=PUT" formmethod="POST">Update</button>
+    <button type="submit" formaction="/<%= hobby._id %>?_method=DELETE" formmethod="POST">Delete</button>
+</form>

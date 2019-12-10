@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div style="float: left;">
+    <h1><%= title %></h1>
+    <% if (hobbies){ %>
+      <div style="margin-bottom: 50px;">
+    <% for (hobby of hobbies){ %>
+      <div style="display: flex; border: 1px solid #555; border-radius: 5px; margin: 10px; padding: 5px;">
+        <form>
+          <a href="/<%= hobby._id %>"><b
+              style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 16px;"><%= hobby.name %></b></a>
+          <p style="margin-top: 0px; color: #555; font-family: Arial, Helvetica, sans-serif;"><%= hobby.desc %></p>
+          <button type="submit" formaction="/<%= hobby._id %>?_method=DELETE" formmethod="POST">Delete</button>
+        </form>
+      </div>
+    <% } %>
+  </div>
+    <% } else { %>
+    <p>No Hobbies here!</p>
+    <% } %>
+    <%- include('./partials/new_hobby')%>
+  </div>
+</body>
+
+</html>
